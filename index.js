@@ -51,6 +51,6 @@ const quenstion =[
   const answer =  await inquirer.prompt(quenstion);
 
   const newinfo = information(answer);
-  fs.writeFile('README.md', newinfo, (err) =>
+  fs.writeFile('README2.md', newinfo, (err) =>
     err? console.log(err) : console.log('Your file is created Successfully!')
   );
