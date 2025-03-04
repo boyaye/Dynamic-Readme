@@ -30,7 +30,13 @@ const quenstion =[
         type:"list",
         name:"license",
         message:"Please select a license",
-        choices: ["MIT", "Apache", "GPL"]
+        choices: [   "GNU AGPLv3",
+            "GNU GPLv3",
+            "GNU LGPLv3",
+            "Apache 2.0",
+            "Boost Software 1.0",
+            "MIT",
+            "Mozilla",]
     },{
         type:"input",
         name:"username",
@@ -42,9 +48,9 @@ const quenstion =[
     }
   ];
 
-  const answer =await inquirer.prompt(quenstion);
+  const answer =  await inquirer.prompt(quenstion);
 
   const newinfo = information(answer);
-  fs.writeFileSync('README.md', newinfo, (err) =>
-    err? console.log(err) : console.log('Success!')
+  fs.writeFile('README.md', newinfo, (err) =>
+    err? console.log(err) : console.log('Your file is created Successfully!')
   );
